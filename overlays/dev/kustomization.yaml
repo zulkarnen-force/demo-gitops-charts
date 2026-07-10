@@ -4,8 +4,11 @@ kind: Kustomization
 # Tell Kustomize to set the namespace for all resources
 namespace: dev-namespace
 
+# Define the global path to your charts folder here
+helmGlobals:
+  chartHome: ../../charts
+
 helmCharts:
   - name: demo-nextjs
     releaseName: demo-nextjs-dev
-    chartHome: ../../charts
     valuesFile: values-dev.yaml
