@@ -3,8 +3,13 @@ kind: Kustomization
 
 namespace: prod-namespace
 # Define the global path to your charts folder here
+
+resources:
+  - namespace.yaml
+
 helmGlobals:
   chartHome: ../../charts
+
 helmCharts:
   - name: demo-nextjs
     releaseName: demo-nextjs-prod
