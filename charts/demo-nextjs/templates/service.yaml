@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "demo-nextjs.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "demo-nextjs.labels" . | nindent 4 }}
 spec:

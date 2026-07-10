@@ -3,6 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ include "demo-nextjs.ingressName" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "demo-nextjs.labels" . | nindent 4 }}
 
