@@ -56,7 +56,7 @@ otel:
 
   serviceVersion: "1.0.0"
 
-  endpoint: http://otel-collector:4318
+  endpoint: http://otel-collector-opentelemetry-collector.observability.svc.cluster.local:4318
 
   protocol: http/protobuf
 
@@ -67,7 +67,7 @@ otel:
   logsExporter: none
 
 secret:
-  databaseUrl: "postgresql://demo:demo123@postgresql:5432/demo?schema=public"
+  databaseUrl: "postgresql://demo:password@postgresql.observability.svc.cluster.local:5432/demo?schema=public"
   authSecret: "change-me"
   jwtSecret: "change-me"
   openaiApiKey: ""
