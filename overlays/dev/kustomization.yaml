@@ -4,6 +4,9 @@ kind: Kustomization
 # Tell Kustomize to set the namespace for all resources
 namespace: dev-namespace
 
+resources:
+  - namespace.yaml
+
 # Define the global path to your charts folder here
 helmGlobals:
   chartHome: ../../charts
