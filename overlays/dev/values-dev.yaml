@@ -6,7 +6,7 @@ pdb:
 
 image:
   repository: zulkarnen/lgtm-demo
-  tag: 24
+  tag: 'null'
   pullPolicy: IfNotPresent
 
 service:
