@@ -12,4 +12,5 @@ helmGlobals:
 helmCharts:
   - name: demo-nextjs
     releaseName: demo-nextjs-prod
+    namespace: prod-namespace
     valuesFile: values-prod.yaml
