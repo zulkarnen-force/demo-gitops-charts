@@ -1,0 +1,79 @@
+replicaCount: 1
+
+pdb:
+  enabled: true
+  minAvailable: 1
+
+image:
+  repository: zulkarnen/lgtm-demo
+  tag: 24
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - host: dev.demo.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+health:
+  startupPath: /api/health
+  readinessPath: /api/health
+  livenessPath: /api/health
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+env:
+  nodeEnv: production
+
+  port: "3000"
+
+  logLevel: info
+
+  appName: LGTM Demo (Dev)
+
+  appUrl: https://dev.demo.local
+
+next:
+  telemetryDisabled: "1"
+
+otel:
+  serviceName: demo-nextjs-dev
+
+  serviceVersion: "1.0.0"
+
+  endpoint: http://otel-collector-opentelemetry-collector.observability.svc.cluster.local:4318
+
+  protocol: http/protobuf
+
+  tracesExporter: otlp
+
+  metricsExporter: none
+
+  logsExporter: none
+
+secret:
+  databaseUrl: "postgresql://demo:password@postgresql.observability.svc.cluster.local:5432/demo?schema=public"
+  authSecret: "change-me"
+  jwtSecret: "change-me"
+  openaiApiKey: ""
+
+serviceAccount:
+  create: true
+  name: ""
+  automountServiceAccountToken: false
+  annotations: {}
