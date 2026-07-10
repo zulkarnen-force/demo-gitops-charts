@@ -7,5 +7,5 @@ namespace: dev-namespace
 helmCharts:
   - name: demo-nextjs
     releaseName: demo-nextjs-dev
-    path: ../../charts/demo-nextjs
+    chartHome: ../../charts
     valuesFile: values-dev.yaml

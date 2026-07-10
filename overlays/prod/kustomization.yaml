@@ -6,5 +6,5 @@ namespace: prod-namespace
 helmCharts:
   - name: demo-nextjs
     releaseName: demo-nextjs-prod
-    path: ../../charts/demo-nextjs
+    chartHome: ../../charts
     valuesFile: values-prod.yaml
