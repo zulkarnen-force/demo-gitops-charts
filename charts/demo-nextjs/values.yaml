@@ -66,7 +66,7 @@ otel:
   logsExporter: none
 
 secret:
-  databaseUrl: "postgresql://demo:password@postgresql.observability.svc.cluster.local:5432/demo?schema=public"
+  databaseUrl: "postgresql://demo:demo123@postgresql.observability.svc.cluster.local:5432/demo?schema=public"
   authSecret: "change-me"
   jwtSecret: "change-me"
   openaiApiKey: ""
